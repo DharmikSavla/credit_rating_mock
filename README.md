@@ -20,13 +20,17 @@ and various risk factors.
 ## Thought Process and Design Choices
 
 ### 1. **Real-World Relevance**
-   - This solution directly supports my work at United Community Bank, where I maintain Criticized Asset Reports for non-performing loans. The rating calculation logic mirrors our actual risk assessment workflows for commercial lending portfolios.
+   - This solution directly supports my work at **United Community Bank**, where I maintain Criticized Asset Reports for non-performing loans. The rating calculation logic mirrors our actual risk assessment workflows for commercial lending portfolios.
 
 ### 2. **Error Handling and Validations**
    - **Pre-Processing Checks**: Every mortgage undergoes validation before calculations begin, verifying data types, value ranges, and business rules.
    - **Contextual Feedback**: Instead of generic errors, the system explains exactly what went wrong maintaining a clear communication.
 
-### 3. **Future Improvements**
+### 3. **Multiprocessing Implementation**
+   - **Automatic Batching**: Dynamically groups mortgages into optimal chunks doing parallel batch processing.
+   - **Resource-Aware**: Uses 75% of available CPU cores by default, preventing system overload.
+
+### 4. **Future Improvements**
    - Libraries like numpy or pandas can be used if the data becomes more complex. For now the current standard library implementation provides adequate performance while maintaining zero external dependencies.
 
 ## Setup and Installation
